@@ -49,6 +49,7 @@ if(WASMEDGE_BUILD_SHARED_LIB)
 
   set_target_properties(wasmedge_c_shared PROPERTIES
     PUBLIC_HEADER ${CMAKE_CURRENT_BINARY_DIR}/../../include/api/wasmedge.h
+    PUBLIC_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/wasm/wasm.h
     MSVC_RUNTIME_LIBRARY "MultiThreadedDLL"
   )
 
@@ -127,6 +128,9 @@ if(WASMEDGE_BUILD_STATIC_LIB)
     DESTINATION ${CMAKE_INSTALL_LIBDIR}
   )
   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/../../include/api/wasmedge.h
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+  )
+  install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/wasm/wasm.h
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
   )
 
